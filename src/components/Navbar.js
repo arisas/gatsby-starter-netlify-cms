@@ -5,7 +5,7 @@ import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 
 const Navbar = () => (
-  <nav className="navbar is-transparent">
+  <nav className="navbar is-info">
     <div className="container">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
@@ -20,6 +20,9 @@ const Navbar = () => (
         </Link>
         <Link className="navbar-item" to="/products">
           Products
+        </Link>
+        <Link className="navbar-item" to="/blog">
+          Blog
         </Link>
       </div>
       <div className="navbar-end">
