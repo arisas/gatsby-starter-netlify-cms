@@ -7,6 +7,7 @@ export default class IndexPage extends React.Component {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
     const image = '/img/jumbotron.jpg'
+    const ace = '/img/AdmiralLogoFinal_.svg'
 
     return (
       <section>
@@ -29,13 +30,14 @@ export default class IndexPage extends React.Component {
                           padding: '1rem',
                         }}
                       >
-                        Ahnyong
+                        Hello
                       </h2>
                     </div>
                     <div className="columns">
                       <div className="column is-7">
                         <h3 className="has-text-weight-semibold is-size-2">
-                          We make cool shit and get in fights
+                          Building communities one{' '}
+                          <i style={{ color: '#f40' }}>hello</i> at a time
                         </h3>
                         <p>
                           And, when you want something, all the universe
@@ -54,15 +56,42 @@ export default class IndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Blogs</h1>
-              <p>Building communities one hello at a time</p>
+              <h1 className="is-size-2">Featured Community</h1>
+              <img src={ace} alt="AdmiralCE" />
+              <p>
+                Continuing Education is a requirement almost all professionals
+                need, starting from Doctors and Lawyers to cosmetologists and
+                nail technicians. The Admiral provides a one stop shop for
+                professions to easily find courses while allowing big and small
+                course providers to garner additional exposure to professionals
+                looking to take their course.
+              </p>
+              <p>
+                Unlike similiar organizations, we allow the professionals who
+                took the course to review and provide feedback to the course
+                provider and allow them to connect and share their knowledge
+                with other professionals who took the same course. We also allow
+                you to store a record of Continuing Education courses in one
+                place so you never have to dig through your files or request
+                receipts/transcripts from courses you took 2-3 years ago.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="section">
+          <div className="container">
+            <div className="content">
+              <h1 className="is-size-2">Recent Thoughts</h1>
             </div>
             {posts
               .filter(post => post.node.frontmatter.templateKey === 'blog-post')
               .map(({ node: post }) => (
                 <div
                   className="content"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+                  style={{
+                    border: '1px solid #eaecee',
+                    padding: '2em 4em',
+                  }}
                   key={post.id}
                 >
                   <p>
